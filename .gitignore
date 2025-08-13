@@ -1,0 +1,36 @@
+```gitignore
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables and config
+.env
+*.env
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# Backup files
+*~
+*.bak
+
+# Compiled HTML/JS/CSS (if using build tools)
+dist/
+build/
+
+# Node modules (if applicable)
+node_modules/
+```

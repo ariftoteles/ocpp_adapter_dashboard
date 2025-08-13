@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EV-MOD Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">EV-MOD</div>
+    <nav>
+      <ul>
+        <li><a class="nav-link" href="#information">📄 Information</a></li>
+        <li class="group">
+          <button class="group-btn" type="button">⚙️ Configuration <span class="chev">▾</span></button>
+          <ul class="submenu">
+            <li><a class="nav-link" href="#general">General</a></li>
+            <li><a class="nav-link" href="#uplink">Uplink</a></li>
+            <li><a class="nav-link" href="#data-point">Data Point</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- <div class="footer">👤 Admin</div> -->
+    <div class="footer">
+      <button id="btn-logout" class="btn secondary">Logout</button>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <header class="content-top">
+      <!-- <span class="tiny-icon">▣</span> -->
+      <h1 id="page-title">Information</h1>
+      <div class="spacer"></div>
+      <button id="save-table" class="btn primary hidden">Apply Changes</button>
+    </header>
+
+    <!-- PAGE: INFORMATION -->
+    <section id="page-information" class="page active">
+      <div class="card">
+        <!-- General -->
+        <div class="row">
+          <div class="row-left"><h3>General</h3></div>
+          <div class="row-right kv">
+            <div class="kv-item"><div class="k">Name</div><div id="info-name" class="v"></div></div>
+            <div class="kv-item"><div class="k">Ip Address</div><div id="info-ip" class="v"></div></div>
+            <div class="kv-item"><div class="k">Port</div><div id="info-port" class="v"></div></div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Uplink Forward to -->
+        <div class="row">
+          <div class="row-left"><h3>Uplink Forward to</h3></div>
+          <div class="row-right kv">
+            <div class="kv-item"><div class="k">Protocol Forward To</div><div id="info-protocol-fwd" class="v linkish"></div></div>
+            <div class="kv-item"><div class="k">Url Forward To</div><div id="info-url-fwd" class="v linkish"></div></div>
+            <div class="kv-item"><div class="k">Port Forward To</div><div id="info-port-fwd" class="v"></div></div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Uplink To -->
+        <div class="row">
+          <div class="row-left"><h3>Uplink To</h3></div>
+          <div class="row-right kv">
+            <div class="kv-item"><div class="k">Protocol Uplink To</div><div id="info-protocol-up" class="v"></div></div>
+            <div class="kv-item"><div class="k">Ip Address Uplink To</div><div id="info-ip-up" class="v"></div></div>
+            <div class="kv-item"><div class="k">Port Uplink To</div><div id="info-port-up" class="v"></div></div>
+            <div class="kv-item"><div class="k">Id Modbus Uplink To</div><div id="info-id-up" class="v"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: GENERAL -->
+    <section id="page-general" class="page">
+      <div class="form card narrow">
+        <div class="form-row">
+          <label>Name</label><input id="gen-name" type="text">
+        </div>
+        <div class="form-row">
+          <label>IP Address</label><input id="gen-ip" type="text">
+        </div>
+        <div class="form-row">
+          <label>Port</label><input id="gen-port" type="text">
+      </div>
+        <button id="save-general" class="btn primary">Apply Changes</button>
+      </div>
+    </section>
+
+    <!-- PAGE: UPLINK -->
+    <section id="page-uplink" class="page">
+      <div class="form card narrow">
+        <h3>Uplink Forward to:</h3>
+        <div class="form-row">
+          <label>Protocol</label><input id="fwd-protocol" type="text" disabled>
+        </div>
+        <div class="form-row">
+          <label>URL</label><input id="fwd-url" type="text">
+        </div>
+        <div class="form-row">
+          <label>Port</label><input id="fwd-port" type="text">
+        </div>
+
+        <h3 style="margin-top:1rem;">Uplink to:</h3>
+        <div class="form-row">
+          <label>Protocol</label><input id="up-protocol" type="text" disabled>
+        </div>
+        <div class="form-row">
+          <label>IP Address</label><input id="up-ip" type="text">
+        </div>
+        <div class="form-row">
+          <label>Port</label><input id="up-port" type="text">
+        </div>
+        <div class="form-row">
+          <label>Id Modbus</label><input id="up-id" type="text">
+        </div>
+
+        <button id="save-uplink" class="btn primary">Apply Changes</button>
+      </div>
+    </section>
+
+    <!-- PAGE: DATA POINT -->
+    <section id="page-data-point" class="page">
+      <div class="table-wrap card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width:60px;">No</th>
+              <th>OCPP Name</th>
+              <th style="width:140px;">Function Code</th>
+              <th style="width:140px;">Address</th>
+              <th style="width:160px;">Data Type</th>
+              <th style="width:120px;text-align:center;">Active</th>
+            </tr>
+          </thead>
+          <tbody id="dp-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

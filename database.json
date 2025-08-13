@@ -1,0 +1,164 @@
+{
+  "data_point": [
+    {
+      "address": 1001,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 1,
+      "is_active": false,
+      "ocpp_name": "Energy.Active.Import.Register"
+    },
+    {
+      "address": 1002,
+      "data_type": "FLOAT",
+      "function_code": 4,
+      "id": 2,
+      "is_active": false,
+      "ocpp_name": "Energy.Reactive.Import.Register"
+    },
+    {
+      "address": 1003,
+      "data_type": "STRING",
+      "function_code": 3,
+      "id": 3,
+      "is_active": false,
+      "ocpp_name": "Power.Active.Import"
+    },
+    {
+      "address": 1004,
+      "data_type": "BOOL",
+      "function_code": 4,
+      "id": 4,
+      "is_active": true,
+      "ocpp_name": "Power.Reactive.Import"
+    },
+    {
+      "address": 1005,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 5,
+      "is_active": true,
+      "ocpp_name": "Current.Import"
+    },
+    {
+      "address": 1006,
+      "data_type": "FLOAT",
+      "function_code": 4,
+      "id": 6,
+      "is_active": true,
+      "ocpp_name": "Voltage"
+    },
+    {
+      "address": 1007,
+      "data_type": "STRING",
+      "function_code": 3,
+      "id": 7,
+      "is_active": true,
+      "ocpp_name": "Frequency"
+    },
+    {
+      "address": 1008,
+      "data_type": "BOOL",
+      "function_code": 4,
+      "id": 8,
+      "is_active": false,
+      "ocpp_name": "Temperature"
+    },
+    {
+      "address": 1009,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 9,
+      "is_active": false,
+      "ocpp_name": "SoC"
+    },
+    {
+      "address": 1010,
+      "data_type": "FLOAT",
+      "function_code": 4,
+      "id": 10,
+      "is_active": false,
+      "ocpp_name": "RPM"
+    },
+    {
+      "address": 1011,
+      "data_type": "STRING",
+      "function_code": 3,
+      "id": 11,
+      "is_active": false,
+      "ocpp_name": "Energy.Active.Export.Register"
+    },
+    {
+      "address": 1012,
+      "data_type": "BOOL",
+      "function_code": 4,
+      "id": 12,
+      "is_active": false,
+      "ocpp_name": "Energy.Reactive.Export.Register"
+    },
+    {
+      "address": 1013,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 13,
+      "is_active": false,
+      "ocpp_name": "Power.Active.Export"
+    },
+    {
+      "address": 1014,
+      "data_type": "FLOAT",
+      "function_code": 4,
+      "id": 14,
+      "is_active": false,
+      "ocpp_name": "Power.Reactive.Export"
+    },
+    {
+      "address": 1015,
+      "data_type": "STRING",
+      "function_code": 3,
+      "id": 15,
+      "is_active": false,
+      "ocpp_name": "Current.Export"
+    },
+    {
+      "address": 1020,
+      "data_type": "BOOL",
+      "function_code": 4,
+      "id": 20,
+      "is_active": false,
+      "ocpp_name": "Current.Offered"
+    },
+    {
+      "address": 1025,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 25,
+      "is_active": false,
+      "ocpp_name": "Power.Factor"
+    },
+    {
+      "address": 1026,
+      "data_type": "INT",
+      "function_code": 3,
+      "id": 26,
+      "is_active": false,
+      "ocpp_name": "Power.Offered"
+    }
+  ],
+  "general": {
+    "ip_address": "127.0.0.12",
+    "name": "Modbus OCCP Adapter",
+    "port": "9221"
+  },
+  "uplink_forward_to": {
+    "port_forward_to": "9220",
+    "protocol_forward_to": "CMS OCCP v.16",
+    "url_forward_to": "wss://ocpp.evseadmin.com/ocpp/16j"
+  },
+  "uplink_to": {
+    "id_modbus_uplink_to": "1",
+    "ip_address_uplink_to": "0.0.0.17",
+    "port_uplink_to": "5020",
+    "protocol_uplink_to": "Modbus TCP"
+  }
+}
