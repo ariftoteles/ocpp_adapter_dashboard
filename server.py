@@ -10,9 +10,9 @@ app = Flask(__name__, static_folder=".", static_url_path="")
 PORT = int(os.getenv("APP_PORT", 8000))
 USERNAME = os.getenv("APP_USERNAME", "admin")
 PASSWORD = os.getenv("APP_PASSWORD", "terlanjuradmin")
-BASE_DIR = os.getenv("APP_DATABASE_BASE_DIR", os.path.dirname(os.path.abspath(__file__)))
-
-DB_PATH = os.path.join(BASE_DIR, "database.json")
+APP_DATABASE_BASE_DIR = os.getenv("APP_DATABASE_BASE_DIR", os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(APP_DATABASE_BASE_DIR, "database.json")
 
 TOKENS = set()
 
