@@ -14,7 +14,7 @@ async function fetchDB() {
   }
 
   try {
-    const r = await fetch("http://localhost:8000/api/data", {
+    const r = await fetch("http://103.150.197.66:8000/api/data", {
       cache: "no-store",
       headers: {
         "Authorization": `Bearer ${token}`
@@ -44,7 +44,7 @@ async function saveDB() {
   }
 
   try {
-    const r = await fetch("http://localhost:8000/api/save", {
+    const r = await fetch("http://103.150.197.66:8000/api/save", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
