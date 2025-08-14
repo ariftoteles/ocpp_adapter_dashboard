@@ -1,15 +1,19 @@
 from flask import Flask, request, jsonify, send_from_directory
 import os, json, secrets
+from dotenv import load_dotenv
+
+# Load .env
+load_dotenv()
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 
-PORT = 8000
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PORT = int(os.getenv("APP_PORT", 8000))
+USERNAME = os.getenv("APP_USERNAME", "admin")
+PASSWORD = os.getenv("APP_PASSWORD", "terlanjuradmin")
+BASE_DIR = os.getenv("APP_DATABASE_BASE_DIR", os.path.dirname(os.path.abspath(__file__)))
+
 DB_PATH = os.path.join(BASE_DIR, "database.json")
 
-# User & session token
-USERNAME = "admin"
-PASSWORD = "terlanjuradmin"
 TOKENS = set()
 
 # ----------------------

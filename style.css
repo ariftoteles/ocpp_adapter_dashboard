@@ -18,15 +18,30 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sa
 
 /* Sidebar */
 .sidebar{width:240px;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column}
-.brand{font-weight:800;font-size:20px;padding:16px;border-bottom:1px solid var(--border);color:var(--brand)}
+.brand{font-weight:800;font-size:20px;padding:16px;color:var(--brand)}
 .sidebar ul{list-style:none;padding:8px;margin:0}
 .sidebar a{display:block;padding:10px 12px;border-radius:8px;color:#111;text-decoration:none}
 .sidebar a:hover{background:#f2f4f7}
+.sidebar a,
+.sidebar .group-btn {
+  font-family: inherit; /* ikut font body */
+  font-size: 14px;       /* biar konsisten */
+  display: flex;
+  align-items: center;
+  gap: 6px; /* jarak antara icon dan teks */
+}
 .group{margin-top:4px}
 .group-btn{width:100%;text-align:left;padding:10px 12px;border:none;background:transparent;border-radius:8px;cursor:pointer}
 .group-btn:hover{background:#f2f4f7}
-.submenu{margin:6px 0 8px 24px}
+/* .submenu{margin:6px 0 8px 24px} */
+.submenu {
+  margin-left: 40px;  /* jarak indentasi */
+  padding-left: 18px; /* biar lebih rapi */
+}
 .submenu a{font-size:14px}
+.submenu .nav-link {
+  padding-left: 24px; /* biar lebih rapi */
+}
 .footer{margin-top:auto;padding:12px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
 
 /* Content */

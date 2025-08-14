@@ -90,11 +90,11 @@ function renderInformation(){
 function renderGeneral(){
   const g=DB.general;
   $("#gen-name").value = g.name||"";
-  $("#gen-ip").value   = g.ip_address||"";
+  // $("#gen-ip").value   = g.ip_address||"";
   $("#gen-port").value = g.port||"";
   $("#save-general").onclick = async ()=>{
     DB.general.name = $("#gen-name").value.trim();
-    DB.general.ip_address = $("#gen-ip").value.trim();
+    // DB.general.ip_address = $("#gen-ip").value.trim();
     DB.general.port = $("#gen-port").value.trim();
     await saveDB();
     renderInformation();
@@ -109,13 +109,13 @@ function renderUplink(){
   $("#fwd-url").value      = f.url_forward_to||"";
   $("#fwd-port").value     = f.port_forward_to||"";
   $("#up-protocol").value  = u.protocol_uplink_to||"";
-  $("#up-ip").value        = u.ip_address_uplink_to||"";
+  // $("#up-ip").value        = u.ip_address_uplink_to||"";
   $("#up-port").value      = u.port_uplink_to||"";
   $("#up-id").value        = u.id_modbus_uplink_to||"";
   $("#save-uplink").onclick = async ()=>{
     DB.uplink_forward_to.url_forward_to = $("#fwd-url").value.trim();
     DB.uplink_forward_to.port_forward_to = $("#fwd-port").value.trim();
-    DB.uplink_to.ip_address_uplink_to = $("#up-ip").value.trim();
+    // DB.uplink_to.ip_address_uplink_to = $("#up-ip").value.trim();
     DB.uplink_to.port_uplink_to = $("#up-port").value.trim();
     DB.uplink_to.id_modbus_uplink_to = $("#up-id").value.trim();
     await saveDB();
@@ -136,20 +136,20 @@ function renderDataPoint(){
       <td>${row.function_code}</td>
       <td>${row.address}</td>
       <td>${row.data_type}</td>
-      <td><input type="checkbox" data-id="${row.id}" ${row.is_active?"checked":""}></td>`;
+      <td><input type="checkbox" disabled data-id="${row.id}" ${row.is_active?"checked":""}></td>`;
     tbody.appendChild(tr);
   });
 
-  $("#save-table").classList.remove("hidden");
-  tbody.onchange = (e)=>{
-    const cb = e.target;
-    if(cb && cb.matches('input[type="checkbox"][data-id]')){
-      const id = +cb.dataset.id;
-      const item = DB.data_point.find(x=>x.id===id);
-      if(item) item.is_active = cb.checked;
-    }
-  };
-  $("#save-table").onclick = async ()=>{ await saveDB(); alert("Data Point saved"); };
+  // $("#save-table").classList.remove("hidden");
+  // tbody.onchange = (e)=>{
+  //   const cb = e.target;
+  //   if(cb && cb.matches('input[type="checkbox"][data-id]')){
+  //     const id = +cb.dataset.id;
+  //     const item = DB.data_point.find(x=>x.id===id);
+  //     if(item) item.is_active = cb.checked;
+  //   }
+  // };
+  // $("#save-table").onclick = async ()=>{ await saveDB(); alert("Data Point saved"); };
 }
 
 document.getElementById("btn-logout").addEventListener("click", () => {
